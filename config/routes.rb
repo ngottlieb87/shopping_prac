@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
    root :to => 'products#index'
+  resource :cart, only: [:show]
 
   resources :products do
     resources :order_items
@@ -9,6 +10,4 @@ Rails.application.routes.draw do
     resources :orders
   end
 
-  resource :cart, only: [:show]
-  
 end
